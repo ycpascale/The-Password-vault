@@ -1,0 +1,48 @@
+****************************************************
+Pascale Young Choang		    0985717
+The class name		The assignment name/number
+The date			wyoungch@mail.uoguelph.ca
+****************************************************
+
+
+************************
+Program Description
+**************************
+This program implements the use of a hash table to manage passwords and their system descriptor.
+Use of ncurse for the UI.
+
+************
+Compilation
+************
+ To compile this code:
+ run: make
+
+ To compile the testing program:
+ run: make test
+
+  Detailed Make options:
+
+  make  runs the cppcheck option
+  make prog  compiles the main.c program with the library
+  make test compiles the testing.c program with the library
+  make doxy creates the doxygen documentation in the docs subdirectory
+  make clean removes executable files
+
+****************************
+Known Limitations, Issues and Errors
+****************************
+I tried to write the data from the hash table into a file
+however this doesn't work and results into a segmentation fault
+after typing Q.
+Please comment out the function transferData if needed. thanks.
+
+*********************************
+From the testing.c we can see that using a size 100 table is better than a size 1000
+as the indexes are scattered way better between 0- 100 than between 0-1000.
+Furthermore, if using a size 1000 table, much more indexes which point to NULL are present than
+in a size 100.
+
+As a persistent storage, I would use a binary file to store the data for a password vault
+since if a text file is used, the text file can be easily read and thus defeats the purpose of
+password vault which is supposed to keep your password encrypted.
+Though a binary file is not the most ideal persistent storage as well.
